@@ -5,39 +5,39 @@ const About = () => {
   const achievements = [
     {
       icon: <Award size={24} />,
-      title: 'Certified Solutions Architect',
-      description: 'AWS Solutions Architect Professional'
+      title: 'Hackathon Finalist',
+      description: 'Top finalist in multiple national-level hackathons like NextStep Hacks, 3percentclub, and GitLab Challenge'
     },
     {
       icon: <Award size={24} />,
-      title: 'AI/ML Specialization',
-      description: 'Stanford University Machine Learning'
+      title: 'AI Builder',
+      description: 'Built Bugwhisper, CivicBot, CareChain AI & other impactful AI/ML projects'
     },
     {
       icon: <Award size={24} />,
-      title: 'Full Stack Expert',
-      description: 'Meta React Developer Professional'
+      title: 'Full Stack Developer',
+      description: 'Specialized in building E-commerce platforms & community apps using Next.js, React, Prisma'
     }
   ];
 
   const timeline = [
     {
+      year: '2025',
+      title: 'Freelance Full Stack Developer',
+      company: 'Self-Driven',
+      description: 'Worked on impactful hackathon projects, portfolio websites, and AI-based solutions using modern web stacks'
+    },
+    {
       year: '2024',
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Innovation Inc.',
-      description: 'Leading AI integration projects and mentoring junior developers'
+      title: 'Open Source Contributor & Project Builder',
+      company: 'Independent',
+      description: 'Built projects with authentication, payment integration, dashboards, and AI APIs for global challenges'
     },
     {
-      year: '2022',
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Co.',
-      description: 'Developed scalable web applications and implemented DevOps practices'
-    },
-    {
-      year: '2020',
-      title: 'Frontend Developer',
-      company: 'Creative Agency',
-      description: 'Built responsive web interfaces and optimized user experiences'
+      year: '2023',
+      title: 'Tech Learner & Community Explorer',
+      company: 'Personal Learning Journey',
+      description: 'Focused on mastering JavaScript, Next.js, Tailwind, and Cloud fundamentals'
     }
   ];
 
@@ -48,16 +48,14 @@ const About = () => {
         <div className="absolute top-1/3 right-20 w-80 h-80 bg-purple-500 rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/3 left-20 w-80 h-80 bg-emerald-500 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       </div>
-      
+
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 animate-fade-in-up">
-            <span className="gradient-text">
-              About Me
-            </span>
+            <span className="gradient-text">About Me</span>
           </h2>
           <p className="text-2xl text-gray-400 max-w-4xl mx-auto animate-slide-in-up">
-            Passionate developer with expertise in modern web technologies and AI
+            Builder. Problem-Solver. Hackathon enthusiast. Merging Web & AI to build what matters.
           </p>
         </div>
 
@@ -66,18 +64,13 @@ const About = () => {
           <div className="space-y-10 animate-slide-in-left">
             <div className="prose prose-lg text-gray-300">
               <p className="text-xl leading-relaxed mb-8">
-                I'm a passionate full-stack developer with over 4 years of experience creating 
-                innovative digital solutions. My expertise spans modern web development frameworks 
-                and cutting-edge AI/GenAI technologies.
+                Hey, I’m <strong>Pratap Shourya Singh</strong> — a full-stack developer passionate about building real-world apps that solve real problems. From E-commerce to Civic Tech, I love turning bold ideas into impactful digital experiences.
               </p>
               <p className="text-xl leading-relaxed mb-8">
-                I specialize in building scalable applications using React, Next.js, and Node.js, 
-                while integrating AI capabilities to create intelligent, user-centric experiences. 
-                My approach combines technical excellence with creative problem-solving.
+                I’ve participated in 10+ hackathons and built projects combining AI, community help, healthcare, and accessibility. My go-to stack includes <strong>React, Next.js, Prisma, PostgreSQL, Tailwind CSS, and Node.js</strong>. I often integrate APIs like <strong>OpenAI</strong>, <strong>Stripe</strong>, and <strong>Google Maps</strong> into my builds.
               </p>
               <p className="text-xl leading-relaxed">
-                When I'm not coding, I enjoy exploring new technologies, contributing to open-source 
-                projects, and sharing knowledge with the developer community through blogs and workshops.
+                I’m continuously learning, exploring AI/ML, cloud, and DevOps. I also love documenting my journey and sharing learnings with others. Let’s build, break, and build again.
               </p>
             </div>
 
@@ -86,7 +79,7 @@ const About = () => {
               <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
                 <MapPin size={24} />
               </div>
-              <span className="font-medium">San Francisco, CA</span>
+              <span className="font-medium">India (Open to Remote Work)</span>
             </div>
 
             {/* Achievements */}

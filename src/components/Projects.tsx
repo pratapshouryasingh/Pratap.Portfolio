@@ -1,39 +1,70 @@
-import React from 'react';
-import { ExternalLink, Github, Sparkles, Bot, ShoppingCart } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Github, Sparkles, Bot, ChevronLeft, ChevronRight } from 'lucide-react';
+import bugwhisper from '../assets/Bugwhisper.png';
+import image from '../assets/image.png';
+import img from '../assets/img2.png';
 
 const Projects = () => {
-  const projects = [
+  const allProjects = [
     {
-      title: 'AI Content Generator',
-      description: 'A sophisticated content generation platform powered by GPT-4 and custom AI models. Features real-time collaboration, template management, and multi-format export.',
-      image: 'https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Next.js', 'OpenAI API', 'TypeScript', 'Prisma', 'PostgreSQL'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: ' Bugwhisper – AI-Powered Bug Fixing & Code Assistant',
+      description: 'Bugwhisper is an intelligent developer assistant that leverages the power of GPT-4, custom AI pipelines, and contextual debugging to help developers identify, explain, and resolve bugs faster. It supports real-time code analysis, explanation, auto-fix suggestions, and integrates with your editor or browser for seamless productivity.',
+      image: bugwhisper,
+      technologies: ['React.js', 'Gemini API', 'Javascript', 'MongoDB', 'Node.js', 'Tailwind CSS'],
+      liveUrl: 'https://bug-whisper.vercel.app',
+      githubUrl: 'https://github.com/pratapshouryasingh/BugWhisper',
       icon: <Sparkles size={24} />,
       featured: true
     },
     {
-      title: 'Smart Chatbot Platform',
-      description: 'Intelligent customer service chatbot with natural language processing, sentiment analysis, and integration with popular CRM systems.',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'LangChain', 'FastAPI', 'Redis', 'Docker'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: 'BizBuddy- AI-Powered Business Assistant And Analyzer',
+      description: 'BizBuddy is an AI-powered tool that generates actionable business insights and reports for startups, entrepreneurs, and small businesses. It leverages LLMs to analyze input about your business and delivers comprehensive reports on market trends, competition, growth opportunities, and more — with dynamic graphs and visualizations for easy understanding',
+      image: img,
+      technologies: ['React', 'Tailwindcss', 'MongoDB Atlas', 'Triva API','MEM0','Node.js'],
+      liveUrl: 'https://biz-buddy-f.vercel.app',
+      githubUrl: 'https://github.com/pratapshouryasingh/BizBuddy-F',
       icon: <Bot size={24} />,
       featured: true
     },
     {
-      title: 'E-commerce Analytics Dashboard',
-      description: 'Comprehensive analytics platform for e-commerce businesses with real-time data visualization, AI-powered insights, and predictive analytics.',
-      image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Vue.js', 'D3.js', 'Node.js', 'MongoDB', 'TensorFlow'],
+      title: 'CareChain AI – Healthcare Assistant Bot',
+      description: 'CareChain AI is an intelligent, privacy-first virtual health assistant designed to provide first-aid support, basic health guidance, and community-based clinic suggestions using AI. It empowers users to quickly get help, learn about symptoms, and access nearby healthcare facilities — all without needing to sign up for a hospital app or wait in line.',
+      image: image,
+      technologies: ['React.js', 'JavaScript', 'Node.js', 'Gemini API', 'Tailwind CSS'],
+      liveUrl: 'https://3-percent-hacks-carechain.vercel.app',
+      githubUrl: 'https://github.com/pratapshouryasingh/3Percent-Hacks-Carechain/tree/main',
+      icon: <Bot size={24} />,
+      featured: false
+    },
+    // Additional projects to make multiple sets
+    {
+      title: 'AI-Powered Recommendation Engine',
+      description: 'Personalized content recommendation system using machine learning algorithms.',
+      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['Python', 'PyTorch', 'Flask', 'Redis'],
       liveUrl: '#',
       githubUrl: '#',
-      icon: <ShoppingCart size={24} />,
-      featured: false
+      icon: <Sparkles size={24} />,
+      featured: true
     }
   ];
+
+  const [currentSet, setCurrentSet] = useState(0);
+  const projectsPerSet = 3;
+  const totalSets = Math.ceil(allProjects.length / projectsPerSet);
+
+  const nextSet = () => {
+    setCurrentSet((prev) => (prev === totalSets - 1 ? 0 : prev + 1));
+  };
+
+  const prevSet = () => {
+    setCurrentSet((prev) => (prev === 0 ? totalSets - 1 : prev - 1));
+  };
+
+  const currentProjects = allProjects.slice(
+    currentSet * projectsPerSet,
+    currentSet * projectsPerSet + projectsPerSet
+  );
 
   return (
     <section id="projects" className="py-24 bg-gradient-to-b from-slate-800 to-slate-900 relative">
@@ -55,8 +86,26 @@ const Projects = () => {
           </p>
         </div>
 
+        {/* Navigation Arrows */}
+        <div className="flex justify-between items-center mb-8">
+          <button 
+            onClick={prevSet}
+            className="p-4 glass rounded-full hover:neon-blue transition-all duration-300 hover:scale-110"
+            aria-label="Previous projects"
+          >
+            <ChevronLeft size={32} />
+          </button>
+          <button 
+            onClick={nextSet}
+            className="p-4 glass rounded-full hover:neon-blue transition-all duration-300 hover:scale-110"
+            aria-label="Next projects"
+          >
+            <ChevronRight size={32} />
+          </button>
+        </div>
+
         <div className="space-y-20">
-          {projects.map((project, index) => (
+          {currentProjects.map((project, index) => (
             <div
               key={index}
               className={`flex flex-col ${
@@ -139,6 +188,20 @@ const Projects = () => {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Indicators */}
+        <div className="flex justify-center mt-12 space-x-3">
+          {Array.from({ length: totalSets }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSet(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSet ? 'bg-blue-500 w-6' : 'bg-gray-600'
+              }`}
+              aria-label={`Go to project set ${index + 1}`}
+            />
           ))}
         </div>
       </div>

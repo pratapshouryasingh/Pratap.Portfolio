@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           
           <div className="text-gray-400 text-lg font-medium">
-            © 2024 DevPortfolio. All rights reserved.
+            © 2025 DevPortfolio. All rights reserved.
           </div>
         </div>
       </div>

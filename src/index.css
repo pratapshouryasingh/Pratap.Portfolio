@@ -217,3 +217,16 @@ body {
 .neon-green {
   box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
 }
+.header, .sidebar-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-2%, -2%);
+}
+
+.sidebar-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translate(2%, -2%);
+}

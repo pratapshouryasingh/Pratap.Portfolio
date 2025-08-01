@@ -58,7 +58,7 @@ const Hero = () => {
           </p>
           
           {/* Social Links with staggered animation */}
-          <div className="flex justify-center space-x-8 py-8">
+          <div className="flex justify-center space-x-8 py-8 mb-20 mt-8">
             <a
               href="https://github.com/pratapshouryasingh"
               target="_blank"

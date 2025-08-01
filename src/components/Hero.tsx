@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="space-y-8">
           {/* Title with typing animation */}
-          <h1 className="text-6xl md:text-8xl font-bold overflow-hidden whitespace-nowrap animate-typing mt-25">
+          <h1 className="text-6xl md:text-8xl font-bold overflow-hidden whitespace-nowrap animate-typing mt-35">
             <span className="gradient-text">
               PRATAP SHOURYA SINGH
             </span>

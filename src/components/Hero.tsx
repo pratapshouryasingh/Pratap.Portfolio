@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="space-y-8">
           {/* Title with typing animation */}
-          <h1 className="text-6xl md:text-8xl font-bold overflow-hidden whitespace-nowrap animate-typing mt-20">
+          <h1 className="text-6xl md:text-8xl font-bold overflow-hidden whitespace-nowrap animate-typing mt-25">
             <span className="gradient-text">
               PRATAP SHOURYA SINGH
             </span>
@@ -87,7 +87,7 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons with bounce animation */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 mb-20">
             <a
               href="#projects"
               className="px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-bold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fade-in opacity-0"

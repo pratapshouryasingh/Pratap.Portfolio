@@ -16,7 +16,7 @@ const Sidebar = () => {
       label: 'Download Resume',
       action: () => {
         const link = document.createElement('a');
-        link.href = '/Pratap shourya singh.pdf'; // File placed in public folder
+        link.href = '/Pratap shourya singh .pdf'; // File placed in public folder
         link.download = 'Pratap_Shourya_Singh_Resume.pdf';
         link.click();
       },

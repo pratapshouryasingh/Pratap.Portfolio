@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-grid-pan: gridPan 20s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+  }
+
+  @keyframes gridPan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(24px); }
+  }
+}
+
+body {
+  background-color: #09090b; /* zinc-950 */
+  color: #f4f4f5; /* zinc-100 */
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .solid-card {
+    background-color: #18181b; /* zinc-900 */
+    border: 1px solid #27272a; /* zinc-800 */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .solid-card:hover {
+    border-color: #3f3f46; /* zinc-700 */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  }
+
+  .accent-text {
+    color: #3b82f6; /* blue-500 */
+  }
+
+  .accent-bg {
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+  }
+
+  .accent-bg:hover {
+    background-color: #2563eb; /* blue-600 */
+  }
+}

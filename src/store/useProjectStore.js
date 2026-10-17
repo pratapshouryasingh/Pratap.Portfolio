@@ -1,7 +1,9 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-const API_BASE = import.meta.env.VITE_API_URL || '';
+const API_BASE = import.meta.env.VITE_API_URL || (
+  import.meta.env.DEV ? '' : 'https://backend-port-1-r2t2.onrender.com'
+);
 
 export const defaultProjects = [
   {
